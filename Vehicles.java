@@ -2,11 +2,11 @@ package projeto_poo;
 
 public class Vehicles {
 	
-	int x;
-	int y;
-	int velocity;
-	boolean factory;
-	String color;
+	private int x;
+	private int y;
+	private int velocity;
+	private boolean factory;
+	private String color;
 	
 	public int getX() {
 		return x;
@@ -47,18 +47,30 @@ public class Vehicles {
 		this.color = color;
 	}
 	
+	public void move() {
+		double n;
+		n = Math.random()*4;
+		if(n>3)
+			moveLeft();
+		else if(n>2)
+			moveRight();
+		else if(n>1)
+			moveForward();
+		else
+			moveBack();
+	}
 	
-	public void moveLeft() {
-		
+	private void moveLeft() {
+		x=(x+velocity)%30;
 	}
-	public void moveRight() {
-		
+	private void moveRight() {
+		x=(x+velocity)%30;
 	}
-	public void moveFront() {
-		
+	private void moveForward() {
+		y=(y+velocity)%60;
 	}
-	public void moveBack() {
-		
+	private void moveBack() {
+		y=(y+velocity)%60;
 	}
 	
 	public Vehicles(int x, int y, int velocity, boolean factory, String color) {
