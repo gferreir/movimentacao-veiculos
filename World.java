@@ -4,15 +4,9 @@ import java.util.ArrayList;
 
 public class World {
 	
-	private ArrayList <Truck> t = new ArrayList<>();
-	private ArrayList <Car> c = new ArrayList<>();
-	private ArrayList <Motorcycle> m = new ArrayList<>();
 	int map[][] = new int[30][60];
 	
 	public World() {
-		t.add(new Truck(1, 1, false));
-		c.add(new Car(1, 2, false));
-		m.add(new Motorcycle(1, 3, false));
 		printReset();
 	}
 	
@@ -48,21 +42,24 @@ public class World {
 		
 	}
 	
-	public void print() {
+	public void print(ArrayList <Motorcycle> m, ArrayList <Car> c, ArrayList <Truck> t) {
 		
 		printReset();
-		checkCar();
-		checkMotorcycle();
-		checkTruck();
+		checkCar(c);
+		checkMotorcycle(m);
+		checkTruck(t);
 		
 		for(int i=0; i<30; i++) {
 			for(int j=0; j<60; j++) {
 				if(map[i][j]==7)
-					System.out.print("\u001b[44m \033[0m");
+//					System.out.print("\u001b[44m \033[0m");
+					System.out.print(7);
 				else if(map[i][j]==8)
-					System.out.print("\u001b[41m \033[0m");
+//					System.out.print("\u001b[41m \033[0m");
+					System.out.print(8);
 				else if(map[i][j]==9)
-					System.out.print("\u001b[43m \033[0m");
+//					System.out.print("\u001b[43m \033[0m");
+					System.out.print(9);
 				else
 					System.out.print(map[i][j]);
 			}
@@ -70,18 +67,18 @@ public class World {
 		}
 	}	
 	
-	private void checkCar() {
+	private void checkCar(ArrayList <Car> c) {
 		for (Car car : c) {
 			map[car.getX()][car.getY()]=8;
 		}
 	}
-	private void checkTruck() {
+	private void checkTruck(ArrayList <Truck> t) {
 		for (Truck truck : t) {
 			map[truck.getX()][truck.getY()]=9;
 		}
 		
 	}
-	private void checkMotorcycle() {
+	private void checkMotorcycle(ArrayList <Motorcycle> m) {
 		for (Motorcycle motorcycle : m) {
 			map[motorcycle.getX()][motorcycle.getY()]=7;			
 		}

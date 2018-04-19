@@ -49,28 +49,34 @@ public class Vehicles {
 	
 	public void move() {
 		double n;
-		n = Math.random()*4;
-		if(n>3)
+		n = (int)(Math.random()*4);
+		System.out.println(n);
+		if(n==3)
 			moveLeft();
-		else if(n>2)
+		else if(n==2)
 			moveRight();
-		else if(n>1)
-			moveForward();
+		else if(n==1)
+			moveUp();
 		else
-			moveBack();
+			moveDown();
 	}
 	
 	private void moveLeft() {
-		x=(x+velocity)%30;
+		y=(y-velocity)%60;
+		if(y<0) {
+			y=60-Math.abs(y);
+		}
 	}
 	private void moveRight() {
+		y=(y+velocity)%60;
+	}
+	private void moveUp() {
+		x=(x-velocity)%30;
+		if(x<0)
+			x=30-Math.abs(x);
+	}
+	private void moveDown() {
 		x=(x+velocity)%30;
-	}
-	private void moveForward() {
-		y=(y+velocity)%60;
-	}
-	private void moveBack() {
-		y=(y+velocity)%60;
 	}
 	
 	public Vehicles(int x, int y, int velocity, boolean factory, String color) {
@@ -82,12 +88,3 @@ public class Vehicles {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
