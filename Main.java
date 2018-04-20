@@ -12,7 +12,7 @@ public class Main {
 		
 		t.add(new Truck(1, 1, false));
 		c.add(new Car(1, 2, false));
-		m.add(new Motorcycle(1, 3, false));
+		m.add(new Motorcycle(4, 4, false));
 		
 		m.get(0).move();
 		

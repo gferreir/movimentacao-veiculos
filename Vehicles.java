@@ -59,7 +59,74 @@ public class Vehicles {
 			moveUp();
 		else
 			moveDown();
+		checkFactory();
+		System.out.println(factory);
 	}
+	
+	
+	private void checkFactory() {
+		if(x==4 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+				
+		else if(x==5 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		else if(x==6 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		
+		else if(x==14 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		else if(x==15 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		else if(x==16 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		
+		else if(x==23 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		else if(x==24 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		else if(x==25 && ((y>5 && y<11) || (y>48 && y<54))) {
+			if(!factory) {
+				//metodo que cria
+				factory = true;
+			}
+		}
+		
+		else
+			factory = false;
+	}
+	
 	
 	private void moveLeft() {
 		y=(y-velocity)%60;
