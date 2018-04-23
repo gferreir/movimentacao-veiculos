@@ -6,4 +6,5 @@ public class Truck extends Vehicles {
 		super(x, y, 1, factory, "yellow");
 		
 	}
+	
 }

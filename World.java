@@ -56,7 +56,7 @@ public class World {
 					System.out.print(7);
 				else if(map[i][j]==8)
 //					System.out.print("\u001b[41m \033[0m");
-					System.out.print(8);
+					System.out.print(4);
 				else if(map[i][j]==9)
 //					System.out.print("\u001b[43m \033[0m");
 					System.out.print(9);

@@ -1,5 +1,8 @@
 package projeto_poo;
 
+import java.util.List;
+//import java.util.ArrayList;
+
 public class Vehicles {
 	
 	private int x;
@@ -47,10 +50,9 @@ public class Vehicles {
 		this.color = color;
 	}
 	
-	public void move() {
+	public int move() {
 		double n;
 		n = (int)(Math.random()*4);
-		System.out.println(n);
 		if(n==3)
 			moveLeft();
 		else if(n==2)
@@ -59,16 +61,84 @@ public class Vehicles {
 			moveUp();
 		else
 			moveDown();
-		checkFactory();
-		System.out.println(factory);
+		
+		return checkFactory();
+	}
+	
+	//Movimenta e checa as colisões
+	
+	public int move(List<Truck>t) {
+		int tmp;
+		boolean crash;
+		tmp = move();
+		
+		for(int i=0; i<t.size(); i++) { //check de colisão entre os mesmos tipos
+			crash = checkCollision(t.get(i));
+			if(crash)
+				return i; //return destroi caminhão
+		}
+		
+		return tmp;
+	}
+	
+	public int move(List<Car>c, List<Truck>t) {
+		int tmp;
+		boolean crash;
+		tmp = move();
+		
+		for(int i=0; i<c.size(); i++) { //check de colisão entre os mesmos tipos
+			crash = checkCollision(c.get(i));
+			if(crash)
+				return i; //return destroi carro
+		}
+		for(int i=0; i<t.size(); i++) { //check de colisão entre carro e caminhão
+			crash = checkCollision(t.get(i));
+			if(crash)
+				return -5; //return destroi carro
+		}
+		
+		return tmp;
+	}
+	
+	public int move(List<Motorcycle>m, List<Car>c, List<Truck>t) {
+		int tmp;
+		boolean crash;
+		tmp = move();
+		
+		for(int i=0; i<m.size(); i++) { //check de colisão entre os mesmos tipos
+			crash = checkCollision(m.get(i));
+			if(crash)
+				return i; //return destroi moto
+		}
+		for(int i=0; i<c.size(); i++) { //check de colisão entre moto e carro
+			crash = checkCollision(c.get(i));
+			if(crash)
+				return -5; //return destroi moto
+		}
+		for(int i=0; i<t.size(); i++) { //check de colisão entre moto e caminhão
+			crash = checkCollision(t.get(i));
+			if(crash)
+				return -5; //return destroi moto
+		}
+		
+		return tmp;
 	}
 	
 	
-	private void checkFactory() {
+	
+	private boolean checkCollision(Vehicles v) {
+		if((this.x == v.getX()) && (this.y == v.getY()))
+			return true;
+		
+		return false;
+	}
+	
+	private int checkFactory() { //return -2 colisão com fabrica de caminhão
 		if(x==4 && ((y>5 && y<11) || (y>48 && y<54))) {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -2;
 			}
 		}
 				
@@ -76,55 +146,69 @@ public class Vehicles {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -2;
 			}
 		}
 		else if(x==6 && ((y>5 && y<11) || (y>48 && y<54))) {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -2;
 			}
 		}
 		
-		else if(x==14 && ((y>5 && y<11) || (y>48 && y<54))) {
+		
+		else if(x==14 && ((y>5 && y<11) || (y>48 && y<54))) { //return -3 colisão com fabrica de carro
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -3;
 			}
 		}
 		else if(x==15 && ((y>5 && y<11) || (y>48 && y<54))) {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -3;
 			}
 		}
 		else if(x==16 && ((y>5 && y<11) || (y>48 && y<54))) {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -3;
 			}
 		}
 		
-		else if(x==23 && ((y>5 && y<11) || (y>48 && y<54))) {
+		
+		else if(x==23 && ((y>5 && y<11) || (y>48 && y<54))) { //return -4 colisão com fabrica de moto
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -4;
 			}
 		}
 		else if(x==24 && ((y>5 && y<11) || (y>48 && y<54))) {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -4;
 			}
 		}
 		else if(x==25 && ((y>5 && y<11) || (y>48 && y<54))) {
 			if(!factory) {
 				//metodo que cria
 				factory = true;
+				return -4;
 			}
 		}
 		
+		
 		else
 			factory = false;
+		
+		
+		return -1;
 	}
 	
 	
