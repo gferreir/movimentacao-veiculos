@@ -25,15 +25,18 @@ public class Main {
 		}
 		
 		while((c.size() == 0) && (m.size() == 0)){
+			w.print(m, c, t);
 			
+			for(int i=0; i<t.size(); i++){
+			}
+			for(int i=0; i<c.size(); i++){
+			}
+			for(int i=0; i<m.size(); i++){
+			}
 		}
-		
-		reciveValuesMovim = t.get(1).move(t.subList(0, 1));
 		
 		System.out.println(t.get(0).move());
 				
-		w.print(m, c, t);
-		
 	}
 
 	private static void createMotorcycle(ArrayList<Motorcycle>m) {
