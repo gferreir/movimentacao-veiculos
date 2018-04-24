@@ -21,7 +21,11 @@ public class Main {
 			createCar(c);
 			createTruck(t);
 		}
+		
+		while((c.size() == 0) && (m.size() == 0)){
 			
+		}
+		
 		reciveValuesMovim = t.get(1).move(t.subList(0, 1));
 		
 		System.out.println(t.get(0).move());
