@@ -52,14 +52,11 @@ public class World {
 		for(int i=0; i<30; i++) {
 			for(int j=0; j<60; j++) {
 				if(map[i][j]==7)
-//					System.out.print("\u001b[44m \033[0m");
-					System.out.print(7);
+					System.out.print("\u001b[44m \033[0m");
 				else if(map[i][j]==8)
-//					System.out.print("\u001b[41m \033[0m");
-					System.out.print(4);
+					System.out.print("\u001b[41m \033[0m");
 				else if(map[i][j]==9)
-//					System.out.print("\u001b[43m \033[0m");
-					System.out.print(9);
+					System.out.print("\u001b[43m \033[0m");
 				else
 					System.out.print(map[i][j]);
 			}
