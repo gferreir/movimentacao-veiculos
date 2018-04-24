@@ -16,11 +16,12 @@ public class Main {
 //		c.add(new Car(1, 2, false));
 //		m.add(new Motorcycle(4, 4, false));
 		
-		createMotorcycle(m);
-		createCar(c);
-		createTruck(t);
-		createTruck(t);
-		
+		for(int i=0; i<10; i++){
+			createMotorcycle(m);
+			createCar(c);
+			createTruck(t);
+		}
+			
 		reciveValuesMovim = t.get(1).move(t.subList(0, 1));
 		
 		System.out.println(t.get(0).move());
