@@ -20,7 +20,7 @@ public class Main {
 			createTruck(t);
 		}
 		
-		while((c.size() > 0) && (m.size() > 0)){ /** Looping do projeto */
+		while((c.size() > 0) || (m.size() > 0)){ /** Looping do projeto */
 			w.print(m, c, t);
 			
 			for(int i=0; i<t.size(); i++){
@@ -37,11 +37,12 @@ public class Main {
 			}
 			
 			System.out.println("Motocycles - " + m.size() + "; Cars - " + c.size() + "; Truks - " + t.size());
-			System.out.println("----------------------------------");
+			System.out.println();
+			System.out.println();
 			System.out.println();
 			
 			try { /** Contador de tempo para compilação */
-				Thread.sleep(500);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -87,15 +88,12 @@ public class Main {
 				break;
 				
 			case -2 :
-				createTruck(t);
-				break;
-			
-			case -3 :
-				createCar(c);
-				break;
-				
-			case -4 :
-				createMotorcycle(m);
+				if(v == 't')
+					createTruck(t);
+				else if(v == 'c')
+					createCar(c);
+				else
+					createMotorcycle(m);
 				break;
 			
 			case -5 :

@@ -133,80 +133,16 @@ public class Vehicles {
 	}
 	
 	private int checkFactory() { //return -2 colisão com fabrica de caminhão
-		if(x==4 && ((y>5 && y<11) || (y>48 && y<54))) {
+
+		if(((y>5 && y<11) || (y>48 && y<54)) && ((x>3 && x<7) || (x>13 && x<17) || (x>22 && x<26))){
 			if(!factory) {
-				//metodo que cria
 				factory = true;
 				return -2;
 			}
 		}
-				
-		else if(x==5 && ((y>5 && y<11) || (y>48 && y<54))) {
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -2;
-			}
-		}
-		else if(x==6 && ((y>5 && y<11) || (y>48 && y<54))) {
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -2;
-			}
-		}
-		
-		
-		else if(x==14 && ((y>5 && y<11) || (y>48 && y<54))) { //return -3 colisão com fabrica de carro
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -3;
-			}
-		}
-		else if(x==15 && ((y>5 && y<11) || (y>48 && y<54))) {
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -3;
-			}
-		}
-		else if(x==16 && ((y>5 && y<11) || (y>48 && y<54))) {
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -3;
-			}
-		}
-		
-		
-		else if(x==23 && ((y>5 && y<11) || (y>48 && y<54))) { //return -4 colisão com fabrica de moto
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -4;
-			}
-		}
-		else if(x==24 && ((y>5 && y<11) || (y>48 && y<54))) {
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -4;
-			}
-		}
-		else if(x==25 && ((y>5 && y<11) || (y>48 && y<54))) {
-			if(!factory) {
-				//metodo que cria
-				factory = true;
-				return -4;
-			}
-		}
-		
 		
 		else
 			factory = false;
-		
-		
 		return -1;
 	}
 	
