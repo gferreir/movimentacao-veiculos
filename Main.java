@@ -25,15 +25,15 @@ public class Main {
 			
 			for(int i=0; i<t.size(); i++){
 				reciveValuesMovim = t.get(i).move(t.subList(0, i));
-				whatCollision(receiveValuesMovin, i, 't', t, c, m);
+				whatCollision(reciveValuesMovim, i, 't', t, c, m);
 			}
 			for(int i=0; i<c.size(); i++){
 				reciveValuesMovim = c.get(i).move(t.subList(0, i));
-				whatCollision(receiveValuesMovin, i, 't', c, c, m);
+				whatCollision(reciveValuesMovim, i, 'c', t, c, m);
 			}
 			for(int i=0; i<m.size(); i++){
 				reciveValuesMovim = m.get(i).move(t.subList(0, i));
-				whatCollision(receiveValuesMovin, i, 't', m, c, m);
+				whatCollision(reciveValuesMovim, i, 'm', t, c, m);
 			}
 		}
 		
