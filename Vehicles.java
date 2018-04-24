@@ -2,13 +2,23 @@ package projeto_poo;
 
 import java.util.List;
 
-public class Vehicles {
+/** Classe master onde deriva caminhão, carro e moto
+ * 
+ * @author gferreira
+ *
+ */
+
+public class Vehicles { 
 	
-	private int x;
-	private int y;
-	private int velocity;
-	private boolean factory;
+	private int x; /** Variável que representa a posição x na matriz */
+	private int y; /** Variável que representa a posição y na matriz */
+	private int velocity; /** Variável estática que varia dependendo do veículo
+							* resposável pelo tamanho do deslocamento */
+	private boolean factory; /** Variável responsável por armazenar se o 
+							   * objeto está em alguma fábrica*/
 	private String color;
+	
+	/** Get e Set da variável x */
 	
 	public int getX() {
 		return x;
@@ -17,6 +27,7 @@ public class Vehicles {
 		this.x = x;
 	}
 	
+	/** Get e Set da variável y */
 	
 	public int getY() {
 		return y;
@@ -25,6 +36,7 @@ public class Vehicles {
 		this.y = y;
 	}
 	
+	/** Get e Set da variável velocity */
 	
 	public int getVelocity() {
 		return velocity;
@@ -33,6 +45,7 @@ public class Vehicles {
 		this.velocity = velocity;
 	}
 	
+	/** Get e Set da variável boolean factory */
 	
 	public boolean isFactory() {
 		return factory;
@@ -41,6 +54,8 @@ public class Vehicles {
 		this.factory = factory;
 	}
 	
+	/** Get e Set 
+	 * da variável color*/
 	
 	public String getColor() {
 		return color;
@@ -48,6 +63,11 @@ public class Vehicles {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	/** Método responsável pela movimentação
+	 *  aletória dos objetos
+	 * @return
+	 */
 	
 	public int move() {
 		double n;
@@ -64,66 +84,94 @@ public class Vehicles {
 		return checkFactory();
 	}
 	
-	//Movimenta e checa as colisões
+	/** Método responsável pela
+	 * movimentação e por checar as colisões
+	 * do veículo caminhão
+	 * @param t
+	 * @return
+	 */
 	
 	public int move(List<Truck>t) {
 		int tmp;
 		boolean crash;
 		tmp = move();
 		
-		for(int i=0; i<t.size(); i++) { //check de colisão entre os mesmos tipos
+		for(int i=0; i<t.size(); i++) { /** Check de colisão entre os mesmos tipos */
 			crash = checkCollision(t.get(i));
 			if(crash)
-				return i; //return destroi caminhão
+				return i; /** O return destroi caminhão */
 		}
 		
 		return tmp;
 	}
+	
+	/** Método responsável pela
+	 * movimentação e por checar as colisões
+	 * do veículo carro
+	 * @param c
+	 * @param t
+	 * @return
+	 */
 	
 	public int move(List<Car>c, List<Truck>t) {
 		int tmp;
 		boolean crash;
 		tmp = move();
 		
-		for(int i=0; i<c.size(); i++) { //check de colisão entre os mesmos tipos
+		for(int i=0; i<c.size(); i++) { /** Check de colisão entre os mesmos tipos de objetos */
 			crash = checkCollision(c.get(i));
 			if(crash)
-				return i; //return destroi carro
+				return i; /** O return destroi carro */
 		}
-		for(int i=0; i<t.size(); i++) { //check de colisão entre carro e caminhão
+		for(int i=0; i<t.size(); i++) { /** Check de colisão entre carro e caminhão */
 			crash = checkCollision(t.get(i));
 			if(crash)
-				return -5; //return destroi carro
+				return -5; /** O return destroi carro */
 		}
 		
 		return tmp;
 	}
+	
+	/** Método responsável pela
+	 * movimentação e por checar as colisões
+	 * do veículo moto
+	 * @param m
+	 * @param c
+	 * @param t
+	 * @return
+	 */
 	
 	public int move(List<Motorcycle>m, List<Car>c, List<Truck>t) {
 		int tmp;
 		boolean crash;
 		tmp = move();
 		
-		for(int i=0; i<m.size(); i++) { //check de colisão entre os mesmos tipos
+		for(int i=0; i<m.size(); i++) { /** Check de colisão entre os mesmos tipos */
 			crash = checkCollision(m.get(i));
 			if(crash)
-				return i; //return destroi moto
+				return i; /** O return destroi moto */
 		}
-		for(int i=0; i<c.size(); i++) { //check de colisão entre moto e carro
+		for(int i=0; i<c.size(); i++) { /** Check de colisão entre moto e carro */
 			crash = checkCollision(c.get(i));
 			if(crash)
-				return -5; //return destroi moto
+				return -5; /** O return destroi moto */
 		}
-		for(int i=0; i<t.size(); i++) { //check de colisão entre moto e caminhão
+		for(int i=0; i<t.size(); i++) { /** Check de colisão entre moto e caminhão */
 			crash = checkCollision(t.get(i));
 			if(crash)
-				return -5; //return destroi moto
+				return -5; /** O return destroi moto */
 		}
 		
 		return tmp;
 	}
 	
-	
+	/** Método responsável por verificar
+	 * se houve uma colisão entre dois
+	 * objetos, fazendo a verificação se ocupam
+	 * uma mesma posição
+	 * @param v
+	 * @return
+	 */
 	
 	private boolean checkCollision(Vehicles v) {
 		if((this.x == v.getX()) && (this.y == v.getY()))
@@ -132,7 +180,13 @@ public class Vehicles {
 		return false;
 	}
 	
-	private int checkFactory() { //return -2 colisão com fabrica de caminhão
+	/** Método responsável por verificar
+	 * se houve colisão entre um objeto veículo
+	 * com alguma fábrica
+	 * @return
+	 */
+	
+	private int checkFactory() { 
 
 		if(((y>5 && y<11) || (y>48 && y<54)) && ((x>3 && x<7) || (x>13 && x<17) || (x>22 && x<26))){
 			if(!factory) {
@@ -146,6 +200,11 @@ public class Vehicles {
 		return -1;
 	}
 	
+	/** Método responsável em
+	 * realizar a movimentação
+	 * da variável y para esquerda
+	 * e tornar ela cíclica
+	 */
 	
 	private void moveLeft() {
 		y=(y-velocity)%60;
@@ -153,17 +212,40 @@ public class Vehicles {
 			y=60-Math.abs(y);
 		}
 	}
+	
+	/** Método responsável em
+	 * realizar a movimentação
+	 * da variável y para direita
+	 * e tornar ela cíclica
+	 */
+	
 	private void moveRight() {
 		y=(y+velocity)%60;
 	}
+	
+	/** Método responsável em
+	 * realizar a movimentação
+	 * da variável x para esquerda
+	 * e tornar ela cíclica
+	 */
+	
 	private void moveUp() {
 		x=(x-velocity)%30;
 		if(x<0)
 			x=30-Math.abs(x);
 	}
+	
+	/** Método responsável em
+	 * realizar a movimentação
+	 * da variável x para direita
+	 * e tornar ela cíclica
+	 */
+	
 	private void moveDown() {
 		x=(x+velocity)%30;
 	}
+	
+	/** Construtor */
 	
 	public Vehicles(int x, int y, int velocity, boolean factory, String color) {
 		this.x = x;

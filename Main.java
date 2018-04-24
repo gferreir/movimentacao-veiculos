@@ -2,17 +2,17 @@ package projeto_poo;
 
 import java.util.ArrayList;
 
-public class Main {
+public class Main { /** Classe principal onde chama as outras classes */
 
 	public static void main(String[] args) {
 		
 		int reciveValuesMovim; /** Recebe valor de retorno da movimentação */
 		
-		ArrayList <Truck> t = new ArrayList<>();
-		ArrayList <Car> c = new ArrayList<>();
-		ArrayList <Motorcycle> m = new ArrayList<>();
+		ArrayList <Truck> t = new ArrayList<>(); /** Instanciando um ArrayList de caminhão */
+		ArrayList <Car> c = new ArrayList<>(); /** Instanciando um ArrayList de carro */
+		ArrayList <Motorcycle> m = new ArrayList<>(); /** Instanciando um ArrayList de moto */
 		
-		World w = new World(); /** Instancia o mundo cíclico */
+		World w = new World(); /** Instanciando o mundo cíclico */
 		
 		for(int i=0; i<10; i++){ /** Inicialização dos 10 veículos de cada tipo */
 			createMotorcycle(m);
@@ -21,7 +21,7 @@ public class Main {
 		}
 		
 		while((c.size() > 0) || (m.size() > 0)){ /** Looping do projeto */
-			w.print(m, c, t);
+			w.print(m, c, t); /** Impressão do mundo com os três tipos de veículos */
 			
 			for(int i=0; i<t.size(); i++){
 				reciveValuesMovim = t.get(i).move(t.subList(0, i));
@@ -36,12 +36,12 @@ public class Main {
 				whatCollision(reciveValuesMovim, i, 'm', t, c, m);
 			}
 			
-			System.out.println("Motocycles - " + m.size() + "; Cars - " + c.size() + "; Truks - " + t.size());
+			System.out.println("Motocycles - " + m.size() + "; Cars - " + c.size() + "; Truks - " + t.size()); /** Imprimindo a quantidade de cada veículo */
 			System.out.println();
 			System.out.println();
 			System.out.println();
 			
-			try { /** Contador de tempo para compilação */
+			try { /** Controla a velocidade de compilação */
 				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -71,18 +71,33 @@ public class Main {
 		return y;
 	}
 	
-	private static void destoyTruck(ArrayList<Truck>t, int i) {
+	private static void destoyTruck(ArrayList<Truck>t, int i) { /** Método que destroi um veículo caminhão
+	 															 *	do ArrayList caminhão, que recebe
+	 															 *  como parâmetro o ArrayList de caminhão
+	 															 *  e a posição*/
 		t.remove(i);
 	}
-	private static void destoyCar(ArrayList<Car>c, int i) {
+	private static void destoyCar(ArrayList<Car>c, int i) { /** Método que destroi um veículo carro
+	 														 *	do ArrayList carro, que recebe
+	 														 *  como parâmetro o ArrayList de carro
+	 														 *  e a posição */
 		c.remove(i);
 	}
-	private static void destoyMotorcycle(ArrayList<Motorcycle>m, int i) {
+	private static void destoyMotorcycle(ArrayList<Motorcycle>m, int i) {  /** Método que destroi um veículo moto
+																			*	do ArrayList moto, que recebe
+																			*	como parâmetro o ArrayList de moto
+																			* 	e a posição */
 		m.remove(i);
 	}
 	
 	
 	private static void whatCollision(int i, int atual, char v, ArrayList<Truck>t, ArrayList<Car>c, ArrayList<Motorcycle>m) {
+		/**
+		 *  Método responsável por identificar
+		 *  se o objeto colidiu com alguma fábrica
+		 *  ou se colidiu com algum outro objeto
+		 */
+		
 		switch(i) {
 			case -1 :
 				break;
