@@ -41,8 +41,6 @@ public class Main {
 			}
 		}
 		
-		System.out.println(t.get(0).move());
-				
 	}
 
 	private static void createMotorcycle(ArrayList<Motorcycle>m) {
