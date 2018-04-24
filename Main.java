@@ -16,6 +16,8 @@ public class Main {
 //		c.add(new Car(1, 2, false));
 //		m.add(new Motorcycle(4, 4, false));
 		
+		World w = new World();
+		
 		for(int i=0; i<10; i++){
 			createMotorcycle(m);
 			createCar(c);
@@ -30,7 +32,6 @@ public class Main {
 		
 		System.out.println(t.get(0).move());
 				
-		World w = new World();
 		w.print(m, c, t);
 		
 	}
