@@ -28,10 +28,13 @@ public class Main {
 			w.print(m, c, t);
 			
 			for(int i=0; i<t.size(); i++){
+				reciveValuesMovim = t.get(i).move(t.subList(0, i));
 			}
 			for(int i=0; i<c.size(); i++){
+				reciveValuesMovim = c.get(i).move(t.subList(0, i));
 			}
 			for(int i=0; i<m.size(); i++){
+				reciveValuesMovim = m.get(i).move(t.subList(0, i));
 			}
 		}
 		
