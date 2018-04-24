@@ -12,10 +12,6 @@ public class Main {
 		ArrayList <Car> c = new ArrayList<>();
 		ArrayList <Motorcycle> m = new ArrayList<>();
 		
-//		t.add(new Truck(1, 1, false));
-//		c.add(new Car(1, 2, false));
-//		m.add(new Motorcycle(4, 4, false));
-		
 		World w = new World();
 		
 		for(int i=0; i<10; i++){
