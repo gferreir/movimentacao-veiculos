@@ -1,5 +1,5 @@
 # Mundo cíclico com veículo
-## Descrição do código
+## Descrição do programa
 
 * Existe um mundo cíclico (uma matriz 60x30) onde possuem 6 fábricas já previamente definidas, onde são inicializados 30 veículo. Sendo 10 caminhões, 10 carros e 10 motos que são derivados de uma classe master e que se movimentam aleatóriamente pelo mundo. 
 * Quando algum objeto passa pela posição de alguma fábrica é criado um novo objeto daquele mesmo tipo, em alguma coordenada aleatória no mapa. 
