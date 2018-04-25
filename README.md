@@ -16,4 +16,6 @@ Como o Java não possui meios para limpar o console, existem alguns meios para s
 
 Porém para esse comando ser executado junto com o código vai depender de qual ambiente o código está sendo compilado, por exemplo se for em um ambiente Windows o comando será **cls** no lugar da palavra **command**, agora se for um ambiente Linux será **clear**.
 
-Sendo assim optei por fazer um looping **FOR** para pular determinadas linhas onde pode ser verificado na linha **62** da classe **Main.java**. Com isso dependendo da resolução do monitor onde será exibido o console, se faz necessário acrescentar ou decrementar a variável ***i*** do looping **FOR**.
+Sendo assim optei por fazer um looping **FOR** para pular determinadas linhas onde pode ser verificado na linha **61** da classe **Main.java**. Com isso dependendo da resolução do monitor onde será exibido o console, se faz necessário acrescentar ou decrementar a variável ***i*** do looping **FOR**.
+
+A documentação do programa está na pasta **doc** e a extensão é ***.html***. Sendo assim para visualiza-la, o repositório deverá ser clonado para sua máquina local e abrir o arquivo ***index.html***.

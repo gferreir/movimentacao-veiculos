@@ -2,10 +2,8 @@ package projeto_poo;
 
 import java.util.List;
 
-/** Classe master onde deriva caminhão, carro e moto
- * 
+/** Classe master onde deriva caminhão, carro e moto 
  * @author gferreira
- *
  */
 
 public class Vehicles { 
@@ -18,7 +16,9 @@ public class Vehicles {
 							   * objeto está em alguma fábrica*/
 	private String color;
 	
-	/** Get e Set da variável x */
+	/** Get e Set da variável x 
+	 *@return x 
+	 **/
 	
 	public int getX() {
 		return x;

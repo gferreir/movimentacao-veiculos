@@ -1,3 +1,7 @@
+package projeto_poo;
+
+import java.util.ArrayList;
+
 /** Código fonte com o objetivo de implementação dos conceitos de Java SE orientado a objeto.
  * 
  * Existe um mundo cíclico (uma matriz 60x30) onde possuem 6 fábricas já previamente definidas, 
@@ -17,11 +21,6 @@
  * @author gferreira (Guilherme Ferreira)
  * @version 1.0
  */
-
-
-package projeto_poo;
-
-import java.util.ArrayList;
 
 public class Main { /** Classe principal onde chama as outras classes */
 

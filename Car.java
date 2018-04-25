@@ -3,7 +3,6 @@ package projeto_poo;
 /** Classe derivada da 
  * classe master veículo
  * @author gferreira
- *
  */
 
 public class Car extends Vehicles {
