@@ -58,9 +58,11 @@ public class Main { /** Classe principal onde chama as outras classes */
 			}
 			
 			System.out.println("Motocycles - " + m.size() + "; Cars - " + c.size() + "; Truks - " + t.size()); /** Imprimindo a quantidade de cada veículo */
-			System.out.println();
-			System.out.println();
-			System.out.println();
+			
+			for(int i=0; i<3; i++) {
+				System.out.println();
+			}
+
 			
 			try { /** Controla a velocidade de compilação */
 				Thread.sleep(200);
