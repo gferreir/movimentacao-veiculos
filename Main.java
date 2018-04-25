@@ -1,3 +1,24 @@
+/** Código fonte com o objetivo de implementação dos conceitos de Java SE orientado a objeto.
+ * 
+ * Existe um mundo cíclico (uma matriz 60x30) onde possuem 6 fábricas já previamente definidas, 
+ * onde são inicializados 30 veículo. Sendo 10 caminhões, 10 carros e 10 motos que são derivados
+ * de uma classe master e que se movimentam aleatóriamente pelo mundo. Quando algum objeto passa
+ * pela posição de alguma fábrica é criado um novo objeto daquele mesmo tipo, em alguma coordenada
+ * aleatória no mapa. 
+ * Se um objeto caminhão colidir com qualquer outro objeto caminhão, os dois
+ * objetos serão excluídos, porém se colidir com com algum objeto carro ou moto ele se manterá no
+ * mapa e os objetos carro e moto serão excluídos do mundo. Se um objeto carro colidir com qualquer 
+ * outro objeto carro, os dois objetos serão excluídos, porém se colidir com um objeto moto ele 
+ * se manterá no mapa e o objeto moto será excluído do mapa. Se um objeto moto colidir com qualquer
+ * outro objeto moto, os dois objetos serão excluídos, porém se colidir com qualquer outro objeto
+ * ele será excluído.
+ * A execução irá parar quando o ArrayList de Moto e ArrayList de Carro forem 0 (zero).
+ * 
+ * @author gferreira (Guilherme Ferreira)
+ * @version 1.0
+ */
+
+
 package projeto_poo;
 
 import java.util.ArrayList;
