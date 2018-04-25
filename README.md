@@ -6,11 +6,11 @@
  * Se um objeto caminhão colidir com qualquer outro objeto caminhão, os dois objetos serão excluídos, porém se colidir com com algum objeto carro ou moto ele se manterá no mapa e os objetos carro e moto serão excluídos do mundo. 
  * Se um objeto carro colidir com qualquer  outro objeto carro, os dois objetos serão excluídos, porém se colidir com um objeto moto ele  se manterá no mapa e o objeto moto será excluído do mapa. 
  * Se um objeto moto colidir com qualquer outro objeto moto, os dois objetos serão excluídos, porém se colidir com qualquer outro objeto ele será excluído.
- * A execução irá parar quando o ArrayList de Moto e ArrayList de Carro forem 0 (zero).
+ * A execução irá parar quando a quantidade de Motos e Carro forem 0 (zero).
 
 # Considerações importantes
 
-Como no Java não possui meios para limpar o console, existem alguns meios para se fazer isso. Um deles era usar o seguinte método no código:
+Como o Java não possui meios para limpar o console, existem alguns meios para se fazer isso. Um deles era usar o seguinte método no código:
 
 `Runtime.getRuntime.exec("command");`
 
