@@ -58,7 +58,7 @@ public class Main { /** Classe principal onde chama as outras classes */
 				whatCollision(reciveValuesMovim, i, 'm', t, c, m);
 			}
 			
-			for(int i=0; i<3; i++) {
+			for(int i=0; i<10; i++) {
 				System.out.println();
 			}
 			
