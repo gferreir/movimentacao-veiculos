@@ -27,6 +27,7 @@ public class Main { /** Classe principal onde chama as outras classes */
 	public static void main(String[] args) {
 		
 		int reciveValuesMovim; /** Recebe valor de retorno da movimentação */
+		int contador = 0;
 		
 		ArrayList <Truck> t = new ArrayList<>(); /** Instanciando um ArrayList de caminhão */
 		ArrayList <Car> c = new ArrayList<>(); /** Instanciando um ArrayList de carro */
@@ -40,8 +41,9 @@ public class Main { /** Classe principal onde chama as outras classes */
 			createTruck(t);
 		}
 		
+		w.print(m, c, t); /** Impressão do mundo com os três tipos de veículos */
+		
 		while((c.size() > 0) || (m.size() > 0)){ /** Looping do projeto */
-			w.print(m, c, t); /** Impressão do mundo com os três tipos de veículos */
 			
 			for(int i=0; i<t.size(); i++){
 				reciveValuesMovim = t.get(i).move(t.subList(0, i));
@@ -56,12 +58,14 @@ public class Main { /** Classe principal onde chama as outras classes */
 				whatCollision(reciveValuesMovim, i, 'm', t, c, m);
 			}
 			
-			System.out.println("Motocycles - " + m.size() + "; Cars - " + c.size() + "; Truks - " + t.size()); /** Imprimindo a quantidade de cada veículo */
-			
 			for(int i=0; i<3; i++) {
 				System.out.println();
 			}
-
+			
+			contador++;
+			w.print(m, c, t); /** Impressão do mundo com os três tipos de veículos */
+			System.out.println("Motocycles - " + m.size() + "; Cars - " + c.size() + "; Truks - " + t.size()); /** Imprimindo a quantidade de cada veículo */
+			System.out.println("Número de iterações: " + contador);
 			
 			try { /** Controla a velocidade de compilação */
 				Thread.sleep(250);
