@@ -16,27 +16,27 @@
 
 * Clone o repositório;
 
-`git clone https://github.com/gferreir/oop_project_world_vehicles.git`
+`$ git clone https://github.com/gferreir/oop_project_world_vehicles.git`
 
 * Navegue até o diretório do projeto
 
-`cd oop_project_world_vehicles/`
+`$ cd oop_project_world_vehicles/`
 
 * Crie um diretório
 
-`mkdir projeto_poo`
+`$ mkdir projeto_poo`
 
 * Mova todo conteúdo do repositório clonado para este novo diretório que foi criado
 
-`mv *.java projeto_poo`
+`$ mv *.java projeto_poo`
 
 * Compile a classe Main.java
 
-`javac -classpath . ./projeto_poo/Main.java`
+`$ javac -classpath . ./projeto_poo/Main.java`
 
 * Execute o Main
 
-`java -classpath . projeto_poo/Main`
+`$ java -classpath . projeto_poo/Main`
 
 Feito isso o resultado do progorama será exibido no console. 
 
