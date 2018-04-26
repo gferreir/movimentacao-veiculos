@@ -8,7 +8,37 @@
  * Se um objeto moto colidir com qualquer outro objeto moto, os dois objetos serão excluídos, porém se colidir com qualquer outro objeto ele será excluído.
  * A execução irá parar quando a quantidade de Motos e Carro forem 0 (zero).
 
-# Considerações importantes
+## Como executar o programa
+
+### Se o seu ambiente de execução for alguma destribuição Linux siga os seguintes passos a serem executados no console:
+
+* Clone o repositório;
+
+`git clone https://github.com/gferreir/oop_project_world_vehicles.git`
+
+* Navegue até o diretório do projeto
+
+`cd oop_project_world_vehicles/`
+
+* Crie um diretório
+
+`mkdir projeto_poo`
+
+* Mova todo conteúdo do repositório clonado para este novo diretório que foi criado
+
+`mv *.java projeto_poo`
+
+* Compile a classe Main.java
+
+`javac -classpath . ./projeto_poo/Main.java`
+
+* Execute o Main
+
+`java -classpath . projeto_poo/Main`
+
+Feito isso o resultado do progorama será exibido no console. 
+
+## Considerações importantes
 
 Como o Java não possui meios para limpar o console, existem alguns meios para se fazer isso. Um deles era usar o seguinte método no código:
 
