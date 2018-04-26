@@ -64,7 +64,7 @@ public class Main { /** Classe principal onde chama as outras classes */
 
 			
 			try { /** Controla a velocidade de compilação */
-				Thread.sleep(200);
+				Thread.sleep(250);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
