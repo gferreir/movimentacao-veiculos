@@ -38,7 +38,7 @@
 
 `$ java -classpath . projeto_poo/Main`
 
-Feito isso o resultado do progorama será exibido no console. 
+Feito isso o resultado do programa será exibido no console. 
 
 ## Considerações importantes
 
